@@ -1,0 +1,89 @@
+body {
+    background-color: rgb(1, 5, 73);
+    height:100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+head{
+    height:100%;
+}
+
+
+
+.aboutimg {
+    flex-basis: 42%;
+    width:42%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-left: 34px;
+    margin-bottom: 52px;
+    width:100%;
+}
+
+#imgbox1, #imgbox2 {
+    width: 100%;
+    object-fit: contain;
+    margin: 10px; 
+}
+.backer {
+    background-image: url("myBackground1.jpg");
+    height:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner { 
+    border: 5px solid black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    font-family: "Lucida Bright", sans-serif;
+    color: ghostwhite;
+    
+}
+
+h1 {
+    font-family: "Lucida Bright", sans-serif;
+    color: ghostwhite;
+}
+
+
+table .button{
+    width:auto;
+    height: auto;
+    transition: transform .25s ease-in-out;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+table .button:hover {
+    transform: scale(1.1);
+    }
+
+
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.centerimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

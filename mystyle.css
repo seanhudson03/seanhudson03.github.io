@@ -91,8 +91,6 @@ table .button:hover {
     transform: scale(1.1);
     }
 
-
-
 .center {
     margin-left: auto;
     margin-right: auto;
@@ -111,7 +109,7 @@ table .button:hover {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 20px;
 }
 
@@ -134,12 +132,16 @@ table .button:hover {
 .project a {
     color: white; 
     text-decoration: none; 
+    text-align: center;
 }
 
 .embed-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; 
+    padding-bottom: 10%; 
     overflow: hidden;
 }
 

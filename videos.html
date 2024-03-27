@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Robert Vets</title>
+        <title>Videos</title>
         <link rel="stylesheet" href="stylesheet.css">
         <script src="jquery-3.7.1.min.js"></script>
         <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
@@ -19,12 +19,12 @@
 
         <table class="center">
             <tr>
-            <th><a href = "index.html" title = "Home"><h2 class="center" id = "currentPage">Photos</h2></a></th>
-            <th><a href = "videos.html" title = "Videos"><h2 class="center">Videos</h2></a></th>
-            <th><a href = "aboutRob.html" title = "About Robert"><h2 class="center">About</h2></a></th>
+            <th><a href = "index.html" title = "Home"><h2 class="center">Photos</h2></a></th>
+            <th><a href = "videos.html" title = "Videos"><h2 class="center" id = "currentPage">Videos</h2></a></th>
+            <th><a href = "aboutRob.html" title = "About Robert"><h2 class="center" >About</h2></a></th>
             </tr>
         </table>
-
+        
         <hr id="line">
 
         <div id="gallery">
@@ -34,8 +34,9 @@
             <script>
                 // Array of image objects
 const imageFiles = [
-    { fileName: "2023_Robbie_Vets_PP2_9580.jpg", url: "personal.html", title: "URI: THE BIRDS THE BEES AND EVERYTHING IN BETWEEN" },
-    { fileName: "2024_Robbie_Vets_A2-0787_1.jpg", url: "surreal.html", title: "SURREALISM" }
+    { fileName: "christmas.jpg", url: "christmas.html", title: "The True Meaning of Christmas" },
+    { fileName: "watchMe.png", url: "watch.html", title: "Watch Me" },
+    { fileName: "ghost.png", url: "ghost.html", title: "鬼 (Ghost)"}
     // Add more image objects here
 ];
 
@@ -59,7 +60,7 @@ imageFiles.forEach(function(image) {
     const imgElement = document.createElement("img");
 
     // Set the "src" attribute of the "img" element
-    imgElement.src = `flicks/${image.fileName}`;
+    imgElement.src = `vidThumbs/${image.fileName}`;
 
     // Set the "alt" attribute of the "img" element
     imgElement.alt = image.title;
@@ -136,6 +137,8 @@ imagesLoaded(ulElement, function() {
                 const emptyLiElement = document.createElement("li");
                 ulElement.appendChild(emptyLiElement);
             </script>
+        </div>
+
         </div>
 
         <footer>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SURREALISM</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script src="jquery-3.7.1.min.js"></script>
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+        <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    </head>
+    <body>
+
+        <a id = "top"></a>
+
+        <a href="index.html">
+
+             <h1 class="title">Robert Vets</h1>
+            
+        </a>
+
+        <table class="center">
+            <tr>
+            <th><a href = "index.html" title = "Home"><h2 class="center" id = "currentPage">Photos</h2></a></th>
+            <th><a href = "videos.html" title = "Videos"><h2 class="center">Videos</h2></a></th>
+            <th><a href = "aboutRob.html" title = "About Robert"><h2 class="center">About</h2></a></th>
+            </tr>
+        </table>
+
+        <hr id="line">
+
+        <h2 class = "ProjText">SURREALISM</h2>
+
+        <p class = "ProjText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nam at lectus urna duis convallis convallis tellus id. Aliquam nulla facilisi cras fermentum odio. Semper eget duis at tellus at urna condimentum mattis pellentesque. Orci sagittis eu volutpat odio facilisis mauris. Magna sit amet purus gravida quis blandit. Dui faucibus in ornare quam viverra orci sagittis eu volutpat. Augue neque gravida in fermentum et sollicitudin ac. Pellentesque id nibh tortor id. Vel eros donec ac odio tempor orci dapibus. Urna molestie at elementum eu facilisis sed. Lacus vel facilisis volutpat est velit. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu. Habitant morbi tristique senectus et. Est placerat in egestas erat imperdiet sed euismod.</p>    
+
+        <div class="wrapper">
+        <div id="gallery">
+            <ul id="imageList"></ul>
+
+            
+            <script>
+                // Array of image file names
+                const imageFiles = [
+                    "2024_Robbie_Vets_A2_2.jpg",
+                    "2024_Robbie_Vets_A2_3_1.jpg",
+                    "2024_Robbie_Vets_A2_4.jpg",
+                    "2024_Robbie_Vets_A2-0787_1.jpg",
+                    "Robbie_Vets_A1_1_Black.jpg",
+                    "Robbie_Vets_A1_2_3.jpg"
+                ];
+
+                // Get the reference to the "ul" element
+                const ulElement = document.querySelector("#imageList");
+
+                // Loop through the imageFiles array
+                imageFiles.forEach(function(fileName) {
+                    // Create a new "li" element
+                    const liElement = document.createElement("li");
+
+                    // Create a new "img" element
+                    const imgElement = document.createElement("img");
+
+                    // Set the "src" attribute of the "img" element
+                    imgElement.src = `SurrealProj/${fileName}`;
+
+                    // Append the "img" element to the "li" element
+                    liElement.appendChild(imgElement);
+
+                    // Append the "li" element to the "ul" element
+                    ulElement.appendChild(liElement);
+                });
+
+                var msnry;
+                
+                
+
+                // Initialize Masonry after all images have been loaded
+                imagesLoaded(ulElement, function() {
+
+                    var columnWidthValue = 300;
+                    var fitWidthValue = true;
+                    var gutterValue = 10;
+
+                    // Adjust the columnWidth and fitWidth options for mobile devices
+                    if (window.innerWidth <= 600) {
+                        var imageListElement = document.getElementById('imageList');
+                        columnWidthValue = imageListElement.offsetWidth; 
+                        fitWidthValue = true; // Center the grid within its container
+                        gutterValue = 0;
+                    }
+
+                    msnry = new Masonry(ulElement, {
+                        itemSelector: 'li',
+                        columnWidth: columnWidthValue, /* This should match the width of the grid items */
+                        fitWidth: fitWidthValue, /* This will center the grid within its container */
+                        gutter: gutterValue
+                    });
+
+                    masnry.layout();
+
+                });
+                // Call the layout method on window resize
+                window.addEventListener('load', function() {
+                    if (msnry) {
+                        msnry.layout();
+                        
+                    }
+                });
+
+                // Add an empty list item at the end
+                const emptyLiElement = document.createElement("li");
+                ulElement.appendChild(emptyLiElement);
+            </script>
+        </div>
+    </div>
+
+    <a href = "#top"><h2 class = "center">Back to Top</h2></a>
+
+    <div id = "navButtons">
+        <a id = "home" href = "index.html"><h2>Home</h2></a>
+        <a id = "prev" href = "personal.html"><p>Previous</p></a>
+        <p>/</p>
+        <p>Next</p>
+    </div>
+
+    <footer>
+            
+        <hr id="line2">
+
+        <div class = "foot">  
+            <h2>© 2024 Robert Vets</h2> 
+            <p>Instagram @r_vets_photos</p>
+            <p>Web Design by Sean Hudson</p>
+        </div>
+    </footer>
+
+    </body>
+</html>

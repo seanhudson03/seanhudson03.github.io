@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>URI: THE BIRDS THE BEES AND EVERYTHING IN BETWEEN</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script src="jquery-3.7.1.min.js"></script>
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+        <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    </head>
+    <body>
+
+        <a id = "top"></a>
+
+        <a href="index.html">
+
+             <h1 class="title">Robert Vets</h1>
+            
+        </a>
+
+        <table class="center">
+            <tr>
+            <th><a href = "index.html" title = "Home"><h2 class="center" id = "currentPage">Photos</h2></a></th>
+            <th><a href = "videos.html" title = "Videos"><h2 class="center">Videos</h2></a></th>
+            <th><a href = "aboutRob.html" title = "About Robert"><h2 class="center">About</h2></a></th>
+            </tr>
+        </table>
+
+        <hr id="line">
+
+        <h2 class = "ProjText">URI: THE BIRDS THE BEES AND EVERYTHING IN BETWEEN</h2>
+
+        <p class = "ProjText">Life is such a beautiful thing and it comes in so many shapes and sizes. URI’s campus is the home to many different varieties of life from cows to squirrels to koi. The goal of my project was to show all these wonderful creatures as I found them. Some of them roam the paths alongside our classrooms and residence halls, while others live on the farm or in the wooded areas around campus. No matter where you look, there will always be some sparkle of life to be seen. If we stop for a moment and really pay attention to these amazing beings, we’ll start to notice we aren’t so different from them. Whether it be a smiling goat or a hungry squirrel, there is always a little bit of humanity to be found in each and every living thing.</p>    
+
+        <div class="wrapper">
+        <div id="gallery">
+            <ul id="imageList"></ul>
+
+            
+            <script>
+                // Array of image file names
+                const imageFiles = [
+                    "2023_Robbie_Vets_PP1_8497.jpg",
+                    "2023_Robbie_Vets_PP1_8530.jpg",
+                    "2023_Robbie_Vets_PP1_8613.jpg",
+                    "2023_Robbie_Vets_PP1_8656.jpg",
+                    "2023_Robbie_Vets_PP2_8816.jpg",
+                    "2023_Robbie_Vets_PP2_8862.jpg",
+                    "2023_Robbie_Vets_PP2_8907.jpg",
+                    "2023_Robbie_Vets_PP2_9007.jpg",
+                    "2023_Robbie_Vets_PP2_9124.jpg",
+                    "2023_Robbie_Vets_PP2_9179.jpg",
+                    "2023_Robbie_Vets_PP2_9211.jpg",
+                    "2023_Robbie_Vets_PP2_9272.jpg",
+                    "2023_Robbie_Vets_PP2_9296.jpg",
+                    "2023_Robbie_Vets_PP2_9298.jpg",
+                    "2023_Robbie_Vets_PP2_9348.jpg",
+                    "2023_Robbie_Vets_PP2_9364.jpg",
+                    "2023_Robbie_Vets_PP2_9414.jpg",
+                    "2023_Robbie_Vets_PP2_9424.jpg",
+                    "2023_Robbie_Vets_PP2_9445.jpg",
+                    "2023_Robbie_Vets_PP2_9580.jpg",
+                    "2023_Robbie_Vets_PP3_9587.jpg",
+                    "2023_Robbie_Vets_PP3_9643.jpg",
+                    "2023_Robbie_Vets_PP3_9677.jpg",
+                    "2023_Robbie_Vets_PP3_9681.jpg",
+                    "2023_Robbie_Vets_PP3_9707.jpg",
+                    "2023_Robbie_Vets_PP3_9791.jpg",
+                    "2023_Robbie_Vets_PP3_9875.jpg",
+                    "2023_Robbie_Vets_PP3_9917.jpg"
+                ];
+
+                // Get the reference to the "ul" element
+                const ulElement = document.querySelector("#imageList");
+
+                // Loop through the imageFiles array
+                imageFiles.forEach(function(fileName) {
+                    // Create a new "li" element
+                    const liElement = document.createElement("li");
+
+                    // Create a new "img" element
+                    const imgElement = document.createElement("img");
+
+                    // Set the "src" attribute of the "img" element
+                    imgElement.src = `Personal_Project_2023/${fileName}`;
+
+                    // Append the "img" element to the "li" element
+                    liElement.appendChild(imgElement);
+
+                    // Append the "li" element to the "ul" element
+                    ulElement.appendChild(liElement);
+                });
+
+                var msnry;
+
+                // Initialize Masonry after all images have been loaded
+                imagesLoaded(ulElement, function() {
+                    var columnWidthValue = 300;
+                    var fitWidthValue = true;
+                    var gutterValue = 10;
+
+                    // Adjust the columnWidth and fitWidth options for mobile devices
+                    if (window.innerWidth <= 600) {
+                        var imageListElement = document.getElementById('imageList');
+                        columnWidthValue = imageListElement.offsetWidth; 
+                        fitWidthValue = true; // Center the grid within its container
+                        gutterValue = 0;
+                    }
+
+                    msnry = new Masonry(ulElement, {
+                        itemSelector: 'li',
+                        columnWidth: columnWidthValue, /* This should match the width of the grid items */
+                        fitWidth: fitWidthValue, /* This will center the grid within its container */
+                        gutter: gutterValue
+                    });
+
+                });
+                // Call the layout method on window resize
+                window.addEventListener('load', function() {
+                    if (msnry) {
+                        msnry.layout();
+                        
+                    }
+                });
+
+                // Add an empty list item at the end
+                const emptyLiElement = document.createElement("li");
+                ulElement.appendChild(emptyLiElement);
+            </script>
+        </div>
+    </div>
+
+    <a href = "#top"><h2 class = "center">Back to Top</h2></a>
+
+    <div id = "navButtons">
+        <a id = "home" href = "index.html"><h2>Home</h2></a>
+        <p id = "prev">Previous</p>
+        <p>/</p>
+        <a href = "surreal.html"><p>Next</p></a>
+    </div>
+
+    <footer>
+            
+        <hr id="line2">
+
+        <div class = "foot">  
+            <h2>© 2024 Robert Vets</h2> 
+            <p>Instagram @r_vets_photos</p>
+            <p>Web Design by Sean Hudson</p>
+        </div>
+        
+    </footer>
+
+    </body>
+</html>

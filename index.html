@@ -1,153 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Robert Vets</title>
-        <link rel="stylesheet" href="stylesheet.css">
-        <script src="jquery-3.7.1.min.js"></script>
-        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-        <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+        <meta name = "viewport" content = "width=device-width, initial-scale=1">
+        <title>Sean Hudson's Webpage</title>
+        <link rel="stylesheet" href="mystyle.css">
     </head>
-    <body>
-
-        <a href="index.html">
-
-            <h1 class="title">Robert Vets</h1>
-           
-       </a>
-
-        <table class="center">
+    <body class = "backer">
+        <img class = "banner" src ="myBanner.jpg" class = "centerimg" alt = "Banner">
+        <table class = "center">
             <tr>
-            <th><a href = "index.html" title = "Home"><h2 class="center" id = "currentPage">Photos</h2></a></th>
-            <th><a href = "videos.html" title = "Videos"><h2 class="center">Videos</h2></a></th>
-            <th><a href = "aboutRob.html" title = "About Robert"><h2 class="center">About</h2></a></th>
+                <td><a href = "index.html" ><img class = "button" src ="homebutton.png" alt = "Home"></a></td>
+                <td><a href = "javascripts.html"><img class = "button" src = "javascriptsbutton.png" alt = "Javascripts"></a></td>
+                <td><a href = "about.html"><img class = "button" src = "aboutbutton.png" alt = "About"></a></td>
             </tr>
         </table>
-
-        <hr id="line">
-
-        <div id="gallery">
-            <ul id="imageList"></ul>
-
-            
-            <script>
-                // Array of image objects
-const imageFiles = [
-    { fileName: "2023_Robbie_Vets_PP2_9580.jpg", url: "personal.html", title: "URI: THE BIRDS THE BEES AND EVERYTHING IN BETWEEN" },
-    { fileName: "2024_Robbie_Vets_A2-0787_1.jpg", url: "surreal.html", title: "SURREALISM" }
-    // Add more image objects here
-];
-
-// Get the reference to the "ul" element
-const ulElement = document.querySelector("#imageList");
-
-let lastTappedElement = null;
-
-imageFiles.forEach(function(image) {
-    // Create a new "li" element
-    const liElement = document.createElement("li");
-    liElement.className = "aboutimg"; // Add the "aboutimg" class to the "li" element
-
-    // Create a new "a" element
-    const aElement = document.createElement("a");
-
-    // Set the "href" attribute of the "a" element
-    aElement.href = image.url;
-
-    // Create a new "img" element
-    const imgElement = document.createElement("img");
-
-    // Set the "src" attribute of the "img" element
-    imgElement.src = `flicks/${image.fileName}`;
-
-    // Set the "alt" attribute of the "img" element
-    imgElement.alt = image.title;
-
-    // Create a new "div" element
-    const divElement = document.createElement("div");
-    divElement.className = "caption"; // Add the "caption" class to the "div" element
-
-    // Set the "textContent" of the "div" element
-    divElement.textContent = image.title;
-
-    // Append the "img" and "div" elements to the "a" element
-    aElement.appendChild(imgElement);
-    aElement.appendChild(divElement);
-
-    // Append the "a" element to the "li" element
-    liElement.appendChild(aElement);
-
-    // Append the "li" element to the "ul" element
-    ulElement.appendChild(liElement);
-
-    // Check if the user is on a mobile device
-    if (window.matchMedia("only screen and (max-width: 760px)").matches) {
-    // Store the href attribute in a variable and then remove it from the a element
-    let href = aElement.getAttribute('href');
-    aElement.removeAttribute('href');
-
-    // Add an event listener for the touchend event to the image
-    imgElement.addEventListener('touchend', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (lastTappedElement && lastTappedElement !== liElement) {
-            lastTappedElement.setAttribute('data-show-caption', 'false');
-        }
-
-        const showCaption = liElement.getAttribute('data-show-caption') === 'true';
-        liElement.setAttribute('data-show-caption', !showCaption);
-
-        if (showCaption) {
-            window.location.href = href;
-        }
-
-        lastTappedElement = liElement;
-    });
-}
-});
-
-// Initialize Masonry after all images have been loaded
-imagesLoaded(ulElement, function() {
-    
-    var columnWidthValue = 300;
-        var fitWidthValue = true;
-        var gutterValue = 10;
-
-        // Adjust the columnWidth and fitWidth options for mobile devices
-        if (window.innerWidth <= 600) {
-            var imageListElement = document.getElementById('imageList');
-            columnWidthValue = imageListElement.offsetWidth; 
-            fitWidthValue = true; // Center the grid within its container
-            gutterValue = 0;
-        }
-
-        msnry = new Masonry(ulElement, {
-            itemSelector: 'li',
-            columnWidth: columnWidthValue, /* This should match the width of the grid items */
-            fitWidth: fitWidthValue, /* This will center the grid within its container */
-            gutter: gutterValue
-        });
-
-});
-
-                // Add an empty list item at the end
-                const emptyLiElement = document.createElement("li");
-                ulElement.appendChild(emptyLiElement);
-            </script>
-        </div>
-
-        <footer>
-            
-            <hr id="line2">
-
-            <div class = "foot">  
-                <h2>© 2024 Robert Vets</h2> 
-                <p>Instagram @r_vets_photos</p>
-                <p>Web Design by Sean Hudson</p>
-            </div>
-        </footer>
-
+        <br>   
+        <h1 class = "center">Welcome to Sean Hudson's Page</h1>
+        <p class = "center">
+            This is an archive of upcoming programmer Sean Hudson. Stored here will be<br>
+            an informational page about the man himself, and a simple portfolio<br>
+            comprised of his works. If you need anything to know about Sean Hudson,<br>
+            you're in the right place. 
+        </p>
     </body>
 </html>

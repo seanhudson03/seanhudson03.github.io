@@ -113,6 +113,39 @@ table .button:hover {
     gap: 20px;
 }
 
+.finalProject {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    align-items: center;
+}
+
+.finalProject h2{
+    color: white; 
+    text-align: center;
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+}
+
+h2{
+    color: white; 
+    text-align: center;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+}
+
+.finalProject a {
+    color: white; 
+    text-decoration: none; 
+    text-align: center;
+}
+
+iframe {
+margin-left: auto;
+margin-right: auto;
+}
+
 .project {
     padding: 20px;
     display: flex;
